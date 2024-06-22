@@ -21,18 +21,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        TextView textIpAddress = (TextView) findViewById(R.id.textIpAddress);
-        TextView ipAddress = (TextView) findViewById(R.id.ipAddress);
-
-        WifiManager wm = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-        int ip = wm.getDhcpInfo().ipAddress;
-
-        if (ip != 0){
-            ipAddress.setText("" + integerToStringIP(ip));
-
-        } else {
-            ipAddress.setText("Can not connet to Wi-fi network.");
-        }
+//        TextView ipAddress = (TextView) findViewById(R.id.ipAddress);
+//
+//        WifiManager wm = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+//        int ip = wm.getDhcpInfo().ipAddress;
+//
+//        if (ip != 0){
+//            ipAddress.setText("" + integerToStringIP(ip));
+//
+//        } else {
+//            ipAddress.setText("Can not connet to Wi-fi network.");
+//        }
 
 
 
