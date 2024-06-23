@@ -18,13 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
+            android:text="Измерение"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:text="Измерение" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -33,9 +33,9 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="Напряжение, В"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="Напряжение, В" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/labelMeasuredCurrent"
@@ -43,9 +43,9 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="Ток, А"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="Ток, А" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/labelMeasuredPower"
@@ -53,9 +53,9 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="Мощность, Вт"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="Мощность, Вт" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,24 +96,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonOn"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="ВКЛ" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="ВКЛ"
+                android:textSize="14sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
 
             <Button
                 android:id="@+id/buttonOff"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="ОТКЛ" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="ОТКЛ"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
@@ -121,9 +131,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
+            android:text="Установка"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:text="Установка" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,12 +142,13 @@
 
             <EditText
                 android:id="@+id/editTextText"
-                android:layout_width="40dp"
+                android:layout_width="60dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textAlignment="center" />
 
             <RadioGroup
                 android:layout_width="60dp"
@@ -148,13 +159,16 @@
                     android:id="@+id/radioButtonСгккуте"
                     android:layout_width="180dp"
                     android:layout_height="40dp"
-                    android:text="Ток, А" />
+                    android:text="Ток, А"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioButtonVoltage"
                     android:layout_width="180dp"
                     android:layout_height="40dp"
-                    android:text="Напряжение, В" />
+                    android:text="Напряжение, В"
+                    android:textSize="16sp" />
             </RadioGroup>
 
 
@@ -162,24 +176,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonSetup"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="Установить" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="Установить"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/buttonInitial"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="Исходное состояние" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="Исх. состояние"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <TextView
@@ -187,9 +209,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
+            android:text="Подключение"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:text="Подключение" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -202,9 +224,9 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="IP-адрес"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="IP-адрес" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textPort"
@@ -212,9 +234,9 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="Порт"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="Порт" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textTimeout"
@@ -222,9 +244,10 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="Тайм-аут"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="Тайм-аут" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -239,7 +262,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:text="192.168.1.10" />
+                android:text="192.168.1.10"
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextPort"
@@ -248,7 +273,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="30000" />
+                android:text="30000"
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextTimeOut"
@@ -257,30 +284,54 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5000" />
+                android:text="5000"
+                android:textAlignment="center"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonConnect"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="Подключиться" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="Подключиться"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/buttonDisconnect"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="Отключиться" />
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:text="Отключиться"
+                android:textSize="14sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textInfo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="Инфо:"
+            android:textColor="@color/black"
+            android:scrollbars="vertical"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
