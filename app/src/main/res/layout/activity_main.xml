@@ -6,9 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -18,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Измерение"
+            android:text="@string/measurement"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -33,7 +37,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Напряжение, В"
+                android:text="@string/voltage"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -43,7 +47,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Ток, А"
+                android:text="@string/current"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -53,7 +57,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Мощность, Вт"
+                android:text="@string/power"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -70,8 +74,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="-" />
+                android:textSize="15sp"
+                android:text="@string/dash" />
 
             <TextView
                 android:id="@+id/textMeasuredCurrent"
@@ -80,8 +84,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="-" />
+                android:textSize="15sp"
+                android:text="@string/dash" />
 
             <TextView
                 android:id="@+id/textMeasuredPower"
@@ -90,8 +94,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="-" />
+                android:textSize="15sp"
+                android:text="@string/dash" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +112,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="ВКЛ"
+                android:text="@string/on"
                 android:textSize="14sp"
                 android:visibility="visible"
                 tools:visibility="visible" />
@@ -122,7 +126,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="ОТКЛ"
+                android:text="@string/off"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -131,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Установка"
+            android:text="@string/setup"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -147,7 +151,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="0"
+                android:text="@string/value_preset"
                 android:textAlignment="center" />
 
             <RadioGroup
@@ -156,10 +160,10 @@
                 android:layout_weight="1" >
 
                 <RadioButton
-                    android:id="@+id/radioButtonСгккуте"
+                    android:id="@+id/radioButtonCurrent"
                     android:layout_width="180dp"
                     android:layout_height="40dp"
-                    android:text="Ток, А"
+                    android:text="@string/current"
                     android:textAlignment="textStart"
                     android:textSize="16sp" />
 
@@ -167,7 +171,7 @@
                     android:id="@+id/radioButtonVoltage"
                     android:layout_width="180dp"
                     android:layout_height="40dp"
-                    android:text="Напряжение, В"
+                    android:text="@string/voltage"
                     android:textSize="16sp" />
             </RadioGroup>
 
@@ -188,7 +192,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="Установить"
+                android:text="@string/set"
                 android:textSize="14sp" />
 
             <Button
@@ -200,7 +204,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="Исх. состояние"
+                android:text="@string/initial_state"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -209,7 +213,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Подключение"
+            android:text="@string/connection"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -224,7 +228,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="IP-адрес"
+                android:text="@string/ip_address"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -234,7 +238,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Порт"
+                android:text="@string/port"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -244,7 +248,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Тайм-аут"
+                android:text="@string/timeout"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -262,9 +266,10 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:text="192.168.1.10"
+                android:text="@string/ip_preset"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:labelFor="@id/editTextIP"/>
 
             <EditText
                 android:id="@+id/editTextPort"
@@ -273,7 +278,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="30000"
+                android:text="@string/port_preset"
                 android:textAlignment="center"
                 android:textSize="16sp" />
 
@@ -284,7 +289,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="5000"
+                android:text="@string/timeout_preset"
                 android:textAlignment="center"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -303,7 +308,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="Подключиться"
+                android:text="@string/connect"
                 android:textSize="14sp" />
 
             <Button
@@ -315,7 +320,7 @@
                 android:insetTop="5dp"
                 android:insetRight="5dp"
                 android:insetBottom="5dp"
-                android:text="Отключиться"
+                android:text="@string/disconnect"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -328,11 +333,13 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="Инфо:"
+            android:text="@string/info"
             android:textColor="@color/black"
             android:scrollbars="vertical"
             android:textSize="14sp" />
 
     </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

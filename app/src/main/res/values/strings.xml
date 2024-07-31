@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">I-tech клиент</string>
+    <string name="connect">Подключиться</string>
+    <string name="connection">Подключение</string>
+    <string name="disconnect">Отключиться</string>
+    <string name="initial_state">Исх.состояние</string>
+    <string name="off">Откл</string>
+    <string name="on">Вкл</string>
+    <string name="set">Установить</string>
+    <string name="ip_preset">192.168.1.10</string>
+    <string name="ip_address">IP-адрес</string>
+    <string name="port_preset">30000</string>
+    <string name="port">Порт</string>
+    <string name="timeout_preset">5000</string>
+    <string name="timeout">Тайм-аут</string>
+    <string name="value_preset">0</string>
+    <string name="current">Ток,А</string>
+    <string name="voltage">Напряжение,В</string>
+    <string name="power">Мощность,Вт</string>
+    <string name="measurement">Измерение</string>
+    <string name="setup">Установка</string>
+    <string name="dash">-</string>
+    <string name="info">Инфо:</string>
 </resources>
