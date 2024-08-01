@@ -33,7 +33,5 @@ public class MainActivity extends AppCompatActivity {
 //            ipAddress.setText("Can not connet to Wi-fi network.");
 //        }
 
-
-
     }
 }
