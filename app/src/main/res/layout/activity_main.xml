@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -324,10 +320,14 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/textInfo"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
@@ -337,10 +337,9 @@
             android:text="@string/info"
             android:textColor="@color/black"
             android:textSize="14sp" />
-
+        </ScrollView>
 
     </LinearLayout>
 
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
