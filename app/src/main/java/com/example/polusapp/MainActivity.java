@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -26,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss : ");
 
         TextView info = findViewById(R.id.textInfo);
-        TextView ipAddres = findViewById(R.id.editTextIP);
+        TextView ipAddress = findViewById(R.id.editTextIP);
+        String ipAggressString = ipAddress.getText().toString();
         TextView port = findViewById(R.id.editTextPort);
+        String portString = port.getText().toString();
         TextView timeOut = findViewById(R.id.editTextTimeOut);
+        String timeOutString = timeOut.getText().toString();
 
         info.setMovementMethod(new ScrollingMovementMethod());
         Button buttonConnect = findViewById(R.id.buttonConnect);
@@ -49,13 +53,20 @@ public class MainActivity extends AppCompatActivity {
 
         buttonConnect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (validate.isIP4validate(ipAddres.toString())) {
-                    info.append(time.format(new Date()) + " - Введенный IP адрес " + ipAddres.toString() + " корректный.\n");
-                    if (validate.isPortValidate(port.toString())) {
-                        info.append(time.format(new Date()) + " - Введенный порт " + port.toString() + " корректный.\n");
-                        info.append(time.format(new Date()) + " - Введенный порт (int) " + Integer.valueOf(port.toString()) + " корректный.\n");
-                        if (validate.isTimeoutValidate(timeOut.toString())) {
-                            info.append(time.format(new Date()) + " - Введенный таймаут " + timeOut.toString() + " корректный.\n");
+                if (validate.isIP4validate(ipAggressString)) {
+                    info.append(time.format(new Date()) + " - Введенный IP адрес " + ipAggressString + " корректный.\n");
+                    if (validate.isPortValidate(portString)) {
+                        info.append(time.format(new Date()) + " - Введенный порт " + portString + " корректный.\n");
+                        if (validate.isTimeoutValidate(timeOutString)) {
+                            info.append(time.format(new Date()) + " - Введенный таймаут " + timeOutString + " корректный.\n");
+                            TCPconnection connection = new TCPconnection(ipAggressString, Integer.parseInt(portString), Integer.parseInt(timeOutString));
+                            try {
+                                info.append(new Date() + " - Пытаюсь подключиться.\n");
+                                connection.connect();
+                                info.append(new Date() + " - Подключение установлено.\n");
+                            } catch (IOException e) {
+                                info.append(new Date() + " - Не удалось подключиться.\n");
+                            }
                         } else {
                             info.append(time.format(new Date()) + " - Введен некорректный таймаут.\n");
                         }

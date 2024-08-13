@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/labelMeasurement"
@@ -30,7 +30,7 @@
             <TextView
                 android:id="@+id/labelMeasuredVoltage"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/voltage"
@@ -40,7 +40,7 @@
             <TextView
                 android:id="@+id/labelMeasuredCurrent"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/current"
@@ -50,7 +50,7 @@
             <TextView
                 android:id="@+id/labelMeasuredPower"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/power"
@@ -66,12 +66,12 @@
             <TextView
                 android:id="@+id/textMeasuredVoltage"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="@string/dash"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="@string/dash" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textMeasuredCurrent"
@@ -79,19 +79,19 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="@string/dash"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="@string/dash" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textMeasuredPower"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="@string/dash"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="@string/dash" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -102,7 +102,7 @@
             <Button
                 android:id="@+id/buttonOn"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -116,7 +116,7 @@
             <Button
                 android:id="@+id/buttonOff"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -129,7 +129,7 @@
         <TextView
             android:id="@+id/labelSetup"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/setup"
             android:textColor="@color/black"
@@ -153,7 +153,7 @@
             <RadioGroup
                 android:layout_width="60dp"
                 android:layout_height="80dp"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <RadioButton
                     android:id="@+id/radioButtonCurrent"
@@ -182,7 +182,7 @@
             <Button
                 android:id="@+id/buttonSetup"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -194,7 +194,7 @@
             <Button
                 android:id="@+id/buttonInitial"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -207,7 +207,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/connection"
             android:textColor="@color/black"
@@ -221,7 +221,7 @@
             <TextView
                 android:id="@+id/textIP"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/ip_address"
@@ -231,7 +231,7 @@
             <TextView
                 android:id="@+id/textPort"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/port"
@@ -241,7 +241,7 @@
             <TextView
                 android:id="@+id/textTimeout"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/timeout"
@@ -258,19 +258,19 @@
             <EditText
                 android:id="@+id/editTextIP"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
+                android:labelFor="@id/editTextIP"
                 android:text="@string/ip_preset"
                 android:textAlignment="center"
-                android:textSize="16sp"
-                android:labelFor="@id/editTextIP"/>
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextPort"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
@@ -281,7 +281,7 @@
             <EditText
                 android:id="@+id/editTextTimeOut"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
@@ -298,7 +298,7 @@
             <Button
                 android:id="@+id/buttonConnect"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -310,7 +310,7 @@
             <Button
                 android:id="@+id/buttonDisconnect"
                 android:layout_width="60dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetLeft="5dp"
                 android:insetTop="5dp"
@@ -324,19 +324,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textInfo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:scrollbars="vertical"
-            android:text="@string/info"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:scrollbars="vertical"
+                android:text="@string/info"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </ScrollView>
 
     </LinearLayout>
