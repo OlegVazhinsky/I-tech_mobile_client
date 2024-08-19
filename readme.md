@@ -1,14 +1,26 @@
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
+# Мобильный клиент I-tech #
+---
 
-> [!TIP]
-> Helpful advice for doing things better or more easily.
+### Краткое описание ###
 
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+Программное обеспечение позволяет управлять источниками питания и электронными нагрузками производства фирмы I-tech.
 
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
+### Статус проекта ###
 
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+Проект находится в разработке.
+
+### Модели к которым можно подключиться сейчас ###
+Модели электронных нагрузок:
+* [IT8906A-1200-240](https://www.itechate.com/ru/product/dc-electronic-load/IT8900A.html)
+
+Модели источников питания:
+* управление источниками питания пока не реализовано.
+
+### Инструкция по установке ###
+Раздел находитсяв разработке.
+
+### Список участников репозитория, которые разрабатывают и поддерживают проект ###
+> Автор идеи - Важинский Олег.
+
+### Лицензия ###
+MIT.
