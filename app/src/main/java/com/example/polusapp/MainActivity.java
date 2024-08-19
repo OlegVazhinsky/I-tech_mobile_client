@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.IOException;
+import java.net.Socket;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -18,27 +18,66 @@ import utils.Validation;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button buttonConnect = null;
+    Button buttonDisconnect = null;
+
+    TextView info = null;
+    TextView ipAddress = null;
+    TextView port = null;
+    TextView timeOut = null;
+
+    String ipAddressString = "";
+    String portString = "";
+    String timeOutString = "";
+
+    TCPconnection connection;
+
+    Validation validate;
+
+    Socket socket;
+
+    SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss : ");
+
+    private void onClickConnect(String ipAddress, int port, int timeOut) {
+        connection = new TCPconnection(ipAddress, port, timeOut);
+        try {
+            connection.connect();
+            info.append(time.format(new Date()) + " - Подключение установлено.\n");
+        } catch (Exception e) {
+            info.append(time.format(new Date()) + " - Подключение не удалось.\n");
+        }
+    }
+
+    private void onClickDisconnect() {
+        try {
+            connection.disconnect();
+            info.append(time.format(new Date()) + " - Подключение разорвано пользователем.\n");
+        } catch (Exception e) {
+            info.append(time.format(new Date()) + " - Подключение не удалось разорвать или подключение не было установлено.\n");
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss : ");
+        buttonConnect = findViewById(R.id.buttonConnect);
+        buttonDisconnect = findViewById(R.id.buttonDisconnect);
 
-        TextView info = findViewById(R.id.textInfo);
-        TextView ipAddress = findViewById(R.id.editTextIP);
-        String ipAggressString = ipAddress.getText().toString();
-        TextView port = findViewById(R.id.editTextPort);
-        String portString = port.getText().toString();
-        TextView timeOut = findViewById(R.id.editTextTimeOut);
-        String timeOutString = timeOut.getText().toString();
+        info = findViewById(R.id.textInfo);
+        ipAddress = findViewById(R.id.editTextIP);
+        port = findViewById(R.id.editTextPort);
+        timeOut = findViewById(R.id.editTextTimeOut);
+
+        ipAddressString = ipAddress.getText().toString();
+        portString = port.getText().toString();
+        timeOutString = timeOut.getText().toString();
 
         info.setMovementMethod(new ScrollingMovementMethod());
-        Button buttonConnect = findViewById(R.id.buttonConnect);
-        Button buttonDisconnect = findViewById(R.id.buttonDisconnect);
 
-        Validation validate = new Validation();
+        validate = new Validation();
 
         info.append("\n" + time.format(new Date()) + " - Старт программы.\n");
 
@@ -53,20 +92,13 @@ public class MainActivity extends AppCompatActivity {
 
         buttonConnect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (validate.isIP4validate(ipAggressString)) {
-                    info.append(time.format(new Date()) + " - Введенный IP адрес " + ipAggressString + " корректный.\n");
+                if (validate.isIP4validate(ipAddressString)) {
+                    info.append(time.format(new Date()) + " - Введенный IP адрес " + ipAddressString + " корректный.\n");
                     if (validate.isPortValidate(portString)) {
                         info.append(time.format(new Date()) + " - Введенный порт " + portString + " корректный.\n");
                         if (validate.isTimeoutValidate(timeOutString)) {
                             info.append(time.format(new Date()) + " - Введенный таймаут " + timeOutString + " корректный.\n");
-                            TCPconnection connection = new TCPconnection(ipAggressString, Integer.parseInt(portString), Integer.parseInt(timeOutString));
-                            try {
-                                info.append(new Date() + " - Пытаюсь подключиться.\n");
-                                connection.connect();
-                                info.append(new Date() + " - Подключение установлено.\n");
-                            } catch (IOException e) {
-                                info.append(new Date() + " - Не удалось подключиться.\n");
-                            }
+                            onClickConnect(ipAddressString, Integer.parseInt(portString), Integer.parseInt(timeOutString));
                         } else {
                             info.append(time.format(new Date()) + " - Введен некорректный таймаут.\n");
                         }
@@ -81,9 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
         buttonDisconnect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                info.append("Пытаюсь отключиться.\n");
+                onClickDisconnect();
             }
         });
 
     }
+
 }

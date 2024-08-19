@@ -19,6 +19,8 @@ public class TCPconnection {
     private String host;
     private int timeout;
 
+    public TCPconnection() {}
+
     public TCPconnection(String host, int port, int timeout) {
         this.host = host;
         this.port = port;
@@ -28,19 +30,15 @@ public class TCPconnection {
     public void connect() throws IOException {
         socket = new Socket(host,  port);
         socket.setSoTimeout(timeout);
-        out = new PrintWriter(socket.getOutputStream(), true);
-        in  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        //out = new PrintWriter(socket.getOutputStream(), true);
+        //in  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     }
 
-    public void disconnect() {
+    public void disconnect() throws IOException {
         if (socket.isConnected()) {
-            try {
-                out.close();
-                in.close();
-                socket.close();
-            } catch (IOException e) {
-                //"EXCEPTION - IOException found while trying to close connection."
-            }
+            out.close();
+            in.close();
+            socket.close();
         }
     }
 

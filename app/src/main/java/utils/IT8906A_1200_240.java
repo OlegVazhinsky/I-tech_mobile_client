@@ -131,7 +131,7 @@ public class IT8906A_1200_240 {
         connection.writeToSocket("SYST:RWL");
     }
 
-    public void disconnect() {
+    public void disconnect() throws IOException {
         connection.disconnect();
     }
 
